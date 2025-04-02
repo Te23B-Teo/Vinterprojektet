@@ -1,63 +1,85 @@
 ﻿// till skolan där man räknar matte fel du dör eller nåt
-bool menybool = true;
-bool insbool = true;
-        while(menybool){
-        Console.WriteLine(@"Vällkommen till Mysteriet i den Försvunna Staden!
+class Program
+{
+    static void Main()
+    {
+        bool menybool = true;
+        bool insbool = true;
+        // Skapar en meny för koden och skapar en loop för att man ska kunna komma tillbaka
+        while (menybool)
+        {
+            Console.WriteLine(@"Välkommen till Mysteriet i den Försvunna Staden!
 
 Skriv start om du vill börja
-skriv av om du vill stänga av
-skriv inv om du vill öppna inventory
-skriv ins om du vill visa instruktionerna");
-        string svar = Console.ReadLine();
-        if(svar.ToLower() == "start"){
-            Console.Clear();
-            Console.WriteLine("");
+Skriv av om du vill stänga av
+Skriv inv om du vill öppna inventory
+Skriv ins om du vill visa instruktionerna");
+
+            string svar = Console.ReadLine();
+            // kollar om svaret användaren svarar är för att starta spelet
+            if (svar.ToLower() == "start")
+            {
+                Console.Clear();
+                Math matte = new Math();
+                matte.skolan();
+            }
+            // kollar om användaren vill stänga av spelet och stänger av den
+            else if (svar.ToLower() == "av")
+            {
+                for (int i = 1; i < 3; i++)
+                {
+                    Console.Clear();
+                    Console.Write("Loading");
+
+                    for (int j = 1; j < 4; j++)
+                    {
+                        Console.Write(".");
+                        Thread.Sleep(1000);
+                    }
+                    for (int l = 1; l < 4; l++)
+                    {
+                        Console.SetCursorPosition(11 - l, 0);
+                        Console.Write(" ");
+                        Thread.Sleep(500);
+                    }
+                }
+                break;
+            }
+            else if (svar.ToLower() == "inv")
+            {
+                Console.Clear();
+                break;
+            }
+            else if (svar.ToLower() == "ins")
+            {
+                while (insbool)
+                {
+                    Console.Clear();
+                    Console.WriteLine(@"Det kommer finnas checkpoints på olika ställen där du kan öppna din meny för att komma åt att stänga av, inventory och instruktionerna.
+Detta kommer att vara ett interaktivt storyspel där du försöker överleva livet i den Försvunna Staden!
+
+Skriv 'back' för att komma tillbaka till startsidan.");
+
+                    string BackFromIns = Console.ReadLine();
+                    if (BackFromIns.ToLower() == "back")
+                    {
+                        Console.Clear();
+                        insbool = false;
+                    }
+                }
+                insbool = true;
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine($"'{svar}' är inte ett alternativ!");
+                Thread.Sleep(1000);
+                Console.Clear();
+            }
         }
-
-        else if(svar.ToLower() == "av"){
-            for(int i=1; i<3;i++){
-            Console.Clear();
-
-     Console.Write("Loadning");
-     for(int j=1; j<4; j++){
-        Console.Write(".");
-        Thread.Sleep(1000);
     }
-        // for(int l=1; l<4; l++){
-        // Console.SetCursorPosition(10,0);
-        //     Console.Write(" ");
-        // Thread.Sleep(1000);
-    // }
-            }
-            break;
-        }
-        else if(svar.ToLower() == "inv"){
-             Console.Clear();
-            break;
-        }
-        else if(svar.ToLower() == "ins"){
-            while(insbool){
-             Console.Clear();
-             menybool = false;
-            Console.WriteLine(@"det kommer finnas checkpoits på olika ställen där du kan ta öppna din meny för att komma åt stänga av, inventory och instruktionerna
-            detta kommer att vara ett interaktivt story spel där du försöker överleva livet i den Försvunna staden!
+}
 
-            skriv back för att komma tillbaka till startsidan");
-            string BackFromIns = Console.ReadLine();
-            if(BackFromIns.ToLower() == "back"){
-            Console.Clear();
-            insbool = false;
-            menybool= true;
-            }
-            }
-        }
-        else{
-            Console.Clear();
-            Console.WriteLine($" {svar} är inte ett alternativ!");
-            Thread.Sleep(1000);
-            Console.Clear();
-        }
-    }
 
 // // meny
 // Console.WriteLine("Vällkommen till Mysteriet i den Försvunna Staden!");
