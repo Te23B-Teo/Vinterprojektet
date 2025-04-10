@@ -1,5 +1,4 @@
-﻿// till skolan där man räknar matte fel du dör eller nåt
-class Program
+﻿class Program
 {
     static void Main()
     {
@@ -20,8 +19,8 @@ Skriv ins om du vill visa instruktionerna");
             if (svar.ToLower() == "start")
             {
                 Console.Clear();
-                Math matte = new Math();
-                matte.skolan();
+                Skolan skola = new Skolan();
+                skola.Matte();
             }
             // kollar om användaren vill stänga av spelet och stänger av den
             else if (svar.ToLower() == "av")
