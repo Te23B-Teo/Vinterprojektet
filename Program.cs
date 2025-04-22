@@ -44,11 +44,13 @@ Skriv ins om du vill visa instruktionerna");
                 }
                 break;
             }
+            // gör så att inventory funkar
             else if (svar.ToLower() == "inv")
             {
                 Console.Clear();
                 break;
             }
+            // leder användaren till instruktionerna
             else if (svar.ToLower() == "ins")
             {
                 while (insbool)
@@ -68,6 +70,7 @@ Skriv 'back' för att komma tillbaka till startsidan.");
                 }
                 insbool = true;
             }
+            // visar användaren att svaret den gett var ett som inte finns och leder den tillbaka till början
             else
             {
                 Console.Clear();
@@ -78,24 +81,6 @@ Skriv 'back' för att komma tillbaka till startsidan.");
         }
     }
 }
-
-
-// // meny
-// Console.WriteLine("Vällkommen till Mysteriet i den Försvunna Staden!");
-// Console.WriteLine("");
-// Console.WriteLine("Skriv start om du vill börja");
-// Console.WriteLine("skriv av om du vill stänga av");
-// Console.WriteLine("skriv inv om du vill öppna inventory");
-// while (true) {
-
-// string menyval = Console.ReadLine();
-// if(menyval.ToLower() == "start"){
-
-// }
-// else if(menyval.ToLower() == "av"){
-//     break;
-// }
-
 
 
 
@@ -120,38 +105,4 @@ Skriv 'back' för att komma tillbaka till startsidan.");
 
 
 // }
-// }
-
-
-
-
-
-
-
-// Console.ReadLine();
-// }
-
-// Player p1 = new();
-// Player p2 = new();
-
-// p1.Name = "dnenfjenf";
-
-// p2.Hitpoints -= 30;
-// Console.WriteLine(p1.Hitpoints);
-
-// Player p = new();
-
-// Console.WriteLine(p.Name);
-// Fight(p1
-// Console.ReadLine();
-
-// static void Fight(Player p){
-//     Console.WriteLine(p.Name);
-// }
-
-// class Player
-// {
-// public string Name = "Micke";
-// public int Hitpoints = 100;
-// public int WeponDamage = 5;
 // }
