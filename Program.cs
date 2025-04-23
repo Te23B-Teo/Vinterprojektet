@@ -47,8 +47,6 @@ Skriv ins om du vill visa instruktionerna");
             // gör så att inventory funkar
             else if (svar.ToLower() == "inv")
             {
-                Console.Clear();
-                break;
             }
             // leder användaren till instruktionerna
             else if (svar.ToLower() == "ins")
